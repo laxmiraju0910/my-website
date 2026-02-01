@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1st Year Student Guide</title>
+<style>
+* {margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif;}
+body {background:#0f0808; color:#fff; scroll-behavior:smooth;}
+a {color:#00e6e6; text-decoration:none;}
+nav {display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:rgba(0,0,0,0.8); position:sticky; top:0; z-index:100;}
+nav h1 {font-size:28px; color:#ff2e2e; letter-spacing:2px;}
+nav ul {display:flex; gap:25px; list-style:none;}
+nav ul li a {position:relative; padding:5px 0; font-weight:bold;}
+nav ul li a::after {content:''; position:absolute; width:0%; height:2px; left:0; bottom:0; background:#00e6e6; transition:0.3s;}
+nav ul li a:hover::after {width:100%;}
+.hero {height:70vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581091012184-1dcb7c45f749?auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;}
+.hero h1 {font-size:48px; color:#ff2e2e; margin-bottom:20px; text-shadow:2px 2px 8px #000;}
+.hero p {font-size:20px; margin-bottom:30px;}
+.hero button {padding:12px 30px; font-size:18px; border:none; border-radius:30px; cursor:pointer; background:#00e6e6; color:#000; transition:0.3s;}
+.hero button:hover {transform:scale(1.1);}
+.semester-toggle {text-align:center; margin:20px 0;}
+.semester-toggle button {padding:10px 25px; margin:0 10px; border:none; border-radius:20px; cursor:pointer; font-size:16px; transition:0.3s; background:#333; color:#fff;}
+.semester-toggle button.active {background:#00e6e6; color:#000;}
+.search-container {text-align:center; margin-bottom:30px;}
+.search-container input {padding:10px 20px; width:50%; max-width:400px; border-radius:20px; border:none; font-size:16px;}
+.subjects {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:25px; padding:0 50px 50px 50px;}
+.card {background:#1a1a1a; border-radius:15px; box-shadow:0 0 5px #00e6e6; transition:0.3s; cursor:pointer; overflow:hidden;}
+.card:hover {transform:translateY(-10px); box-shadow:0 0 20px #00e6e6;}
+.card h3 {padding:15px; background:#111; color:#ff2e2e;}
+.card-content {padding:15px; display:none; font-size:14px; line-height:1.4;}
+.card-content a {display:block; margin:5px 0; color:#00e6e6;}
+.card-content a:hover {color:#ff2e2e;}
+footer {
+  background: rgba(15,15,15,0.95);
+  padding: 40px 50px 20px;
+  box-shadow: 0 0 15px #b53333;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.footer-box h3 {
+  color: #ff2e2e;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #ff2e2e;
+}
+
+.footer-box p,
+.footer-box a {
+  font-size: 14px;
+  color: #ccc;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.footer-box a:hover {
+  color: #00fff7;
+  text-shadow: 0 0 5px #00fff7;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+<h1>1st Year Guide</h1>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#sem1">Sem 1</a></li>
+<li><a href="#sem2">Sem 2</a></li>
+<li><a href="#footer">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<h1>Welcome to 1st Year!</h1>
+<p>Your guide to subjects, syllabus, books, and YouTube resources</p>
+<button onclick="scrollToSemester('sem1')">Explore Semesters</button>
+</section>
+
+<div class="semester-toggle">
+<button id="btnSem1" class="active" onclick="showSemester(1)">Semester 1</button>
+<button id="btnSem2" onclick="showSemester(2)">Semester 2</button>
+</div>
+
+<div class="search-container">
+<input type="text" id="searchInput" placeholder="Search subjects..." onkeyup="searchSubjects()">
+</div>
+
+<section class="subjects" id="sem1">
+<!-- Sem 1 Subjects -->
+<div class="card">
+<h3 onclick="toggleCard(this)">Environment and Safety Engineering</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=7869" target="_blank">View Syllabus</a>
+<p>Books:<a href="https://drive.google.com/file/d/1Vb2Wu0dZOFIqqcYE-jCtLX9D3ziBVpLi/view?usp=drivesdk" target="_blank">B.S.Dhillon,Applied safety for engineers system</a></p>
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Electrochemistry and Conducting Polymers</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=8230" target="_blank">View Syllabus</a>
+<p>Books:<a href="https://drive.google.com/file/d/1Yed5-W3DYYGALNhvM8DDGGxD8lVRQWSh/view?usp=drivesdk" target="_blank">Brett Ch,Brett A,Electrochemistry</a> </p>
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Basic Electronics Engineering</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=5682" target="_blank">View Syllabus</a>
+<p>Books:<a href="https://drive.google.com/file/d/13DZTpJdiRYIPpgjYj5tJdMNQoHTzXRHb/view?usp=drivesdk" target="_blank">sedra smith</a> </p>
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Mathematics – I</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=8243" target="_blank">View Syllabus</a>
+<p>Books:<a href="https://drive.google.com/file/d/13bnXbfPJbRoYvAyVn2hDS-sBJUf-VjKM/view?usp=drivesdk" target="_blank">Thomas Calculus</a></p>
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Communicative English</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=5693" target="_blank">View Syllabus</a>
+<p>Books:<a href="https://drive.google.com/file/d/1_uuEdc8ROyuuiZqzkQdU0SH4DYvn729N/view?usp=drivesdk" target="_blank">McGRAW-HILL Education</a></p>
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Computer Aided Drawing and Graphics</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=8233" target="_blank">View Syllabus</a>
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Chemistry Laboratory</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=5689" target="_blank">View Syllabus</a>
+
+
+</div>
+</div>
+</section>
+
+<section class="subjects" id="sem2" style="display:none;">
+<!-- Sem 2 Subjects -->
+<div class="card">
+<h3 onclick="toggleCard(this)">Engineering Mechanics</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=5689" target="_blank">View Syllabus</a>
+<p>Books:<a href="https://www.scribd.com/doc/172046568/Engineering-Mechanics-by-Timoshenko" target="_blank">S TIMOSHENKO Engineering mechanics</a> </p>
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Basic Electrical Engineering</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=5681" target="_blank">View Syllabus</a>
+<p>Books:<a href="https://drive.google.com/file/d/1ezTU5kYxpK_g3cMbXDpr_3gopvOZxKEs/view?usp=drivesdk"target="_blank">Charles K.Alexander</a></p>
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Mathematics – II</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=8244" target="_blank">View Syllabus</a>
+<p>Books:<a href="https://drive.google.com/file/d/1eXXddLqW76lvNMtJvr_1x82rBvl_MnSf/view?usp=drivesdk"target="_blank">Gilbert Strang fourth edition</a></p>
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Electromagnetic and Quantum Physics</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=8224" target="_blank">View Syllabus</a>
+<p>Books:<a href="https://drive.google.com/file/d/1cNzt_HNA4vqyvlPU59JqkEYKY4Jb_NNl/view?usp=drivesdk" target="_blank">Arthur Beiser Sixth Edition</a> </p>
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Biology</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=5683" target="_blank">View Syllabus</a>
+<p>Books:<a href="https://drive.google.com/file/d/1TiTmtP4A8mGN-SmKxROW2Aoz14kl8eE8/view?usp=drivesdk" target="_blank">concepts in biology</a></p>
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Value Education and Ethics</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=8236" target="_blank">View Syllabus</a>
+
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Programming for Problem Solving</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=8214" target="_blank">View Syllabus</a>
+
+<p>YouTube:<a href="https://youtu.be/irqbmMNs2Bo?si=SixEVcjECN9JlpQw" target="_blank">complete C Course</a></p>
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Workshop Practice</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=8234" target="_blank">View Syllabus</a>
+
+
+</div>
+</div>
+<div class="card">
+<h3 onclick="toggleCard(this)">Physics Laboratory</h3>
+<div class="card-content">
+<a href="https://www.nitrkl.ac.in/Academic/Syllabus/?id=8&sid=5688" target="_blank">View Syllabus</a>
+<p>phy lab:<a href="https://drive.google.com/drive/folders/1EtFAwTLFlWT3wGTOeJNGOSbKZSuD-jrX" target="_blank">manuals</a></p>
+<p>YouTube:<a href="https://docs.google.com/document/d/1b77RaGdvYQ_MrRpKn1As6BY2p6rpmjDuyAFWNNMNSD8/edit?usp=drivesdk" target="_blank">exp links</a></p>
+</div>
+</div>
+</section>
+
+<footer id="footer" style="margin-top:40px;">
+  <div class="footer-container">
+    
+    <!-- ABOUT -->
+    <div class="footer-box">
+      <h3>About This Website</h3>
+      <p>
+        This website is created to help 1st year college students
+        understand their subjects, syllabus, and learning path easily.
+    
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="#home">Home</a>
+      <a href="#sem1">Sem 1</a>
+      <a href="#sem2">Sem 2</a>
+      <a href="https://www.nitrkl.ac.in/Academic/Curriculum/?id=8" target="_blank">
+        Official Syllabus
+      </a>
+    </div>
+
+    <!-- DEVELOPER -->
+    <div class="footer-box">
+      <h3>Developer</h3>
+      <p><strong>Name:</strong> Laxmi</p>
+       <p><strong>Contact:</strong>9040xxxxxx</p>
+       <p><b>email:</b>laxmiraju0910@gmail.com</p>
+      
+     
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">
+    © 2026 First Year Guide | Made with ❤️ for students
+  </p>
+</footer>
+
+
+
+</footer>
+
+<script>
+function showSemester(sem){
+document.getElementById('sem1').style.display = sem===1?'grid':'none';
+document.getElementById('sem2').style.display = sem===2?'grid':'none';
+document.getElementById('btnSem1').classList.toggle('active', sem===1);
+document.getElementById('btnSem2').classList.toggle('active', sem===2);
+}
+function scrollToSemester(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+function toggleCard(el){
+const content = el.nextElementSibling;
+content.style.display = content.style.display==='block'?'none':'block';
+}
+function searchSubjects(){
+let input = document.getElementById('searchInput').value.toLowerCase();
+let cards = document.querySelectorAll('.card');
+cards.forEach(card=>{
+let title = card.querySelector('h3').textContent.toLowerCase();
+card.style.display = title.includes(input)?'block':'none';
+});
+}
+</script>
+
+</body>
+</html>
