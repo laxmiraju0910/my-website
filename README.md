@@ -22,6 +22,6 @@ It is built using only **HTML, CSS, and JavaScript**, making it perfect for stud
 
 No external libraries or frameworks are used.
 ##live website:
-
+ https://laxmiraju0910.github.io/my-website/
 
  
